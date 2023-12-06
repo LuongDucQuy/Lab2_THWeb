@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xóa dòng trong trang web</title>
+	<style type="text/css">
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+            background-color:rgb(169, 231, 169);
+            padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Số lượng</th>
+			<th>Đơn giá</th>
+			<th>Tổng</th>
+			<th>Chức năng</th>
+		</tr>
+		<tr>
+            <td><input type="text" id="quantity1" oninput="calculateTotal(1)"></td>
+            <td><input type="text" id="price1" oninput="calculateTotal(1)"></td>
+            <td><input type="text" id="total1" readonly></td>
+            <td><button onclick="deleteRow(this) " style="border-radius: 30px; margin-left: 17px">Xóa</button></td>
+        </tr>
+        <tr>    
+            <td><input type="text" id="quantity2" oninput="calculateTotal(2)"></td>
+            <td><input type="text" id="price2" oninput="calculateTotal(2)"></td>
+            <td><input type="text" id="total2" readonly></td>
+            <td><button onclick="deleteRow(this)" style="border-radius: 30px; margin-left: 17px;">Xóa</button></td>
+        </tr>
+	</table>
+
+	<script type="text/javascript">
+        function calculateTotal(row) {
+            var quantity = document.getElementById("quantity" + row).value;
+            var price = document.getElementById("price" + row).value;
+            var total = quantity * price;
+            document.getElementById("total" + row).value = total;
+        }
+    
+        function deleteRow(btn) {
+            var row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+    	<h2>Lương Đức Quý 6351071061</h2>
+
+</body>
+</html>

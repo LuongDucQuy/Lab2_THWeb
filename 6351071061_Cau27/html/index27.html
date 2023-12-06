@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can Chi Converter</title>
+</head>
+<body>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+  <div class="all" style="border: 1px solid #000; display: inline-block; margin: 30px;">
+    <h2 style="background-color: rgb(241, 205, 138); display: inline-block; padding: 0 50px; margin: 10px 10px 0 10px;">TÍNH CAN CHI CỦA NGÀY ÂM LỊCH</h2>
+  <br>
+
+  <div class="duong" style="display: inline-block; background-color: aquamarine; width: 516.5px; margin: 0 10px 10px 10px;">
+        <label for="year">Năm dương lịch:</label>
+        <label for="" style="margin-left: 145px;">Can chi năm âm lịch</label>
+        <br>
+        <input type="text" id="year" placeholder="Nhập năm">
+        <button onclick="convertYear()" style="margin: 0 30px; border-radius: 30px;"> ---> </button>
+        <input type="text" id="result" readonly>
+  </div>
+  </div>
+
+  <script>
+    function convertYear() {
+      // Lấy giá trị năm từ textbox
+      var inputYear = document.getElementById("year").value;
+
+      // Kiểm tra validate giá trị năm
+      if (!inputYear || isNaN(inputYear)) {
+        alert("Vui lòng nhập một giá trị năm hợp lệ.");
+        return;
+      }
+
+      // Chuyển đổi năm dương lịch sang năm âm lịch
+      var canChi = convertToCanChi(parseInt(inputYear));
+
+      // Hiển thị kết quả
+      document.getElementById("result").value =  canChi;
+    }
+
+    function convertToCanChi(year) {
+      // Mảng chứa các can
+      var canArr = ["Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý"];
+
+      // Mảng chứa các chi
+      var chiArr = ["Tí", "Sửu", "Dần", "Mão", "Thìn", "Tị", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi"];
+
+      // Tính can
+      var canIndex = (year + 6) % 10;
+
+      // Tính chi
+      var chiIndex = (year + 8) % 12;
+
+      // Kết hợp can và chi
+      var canChi = canArr[canIndex] + " " + chiArr[chiIndex];
+
+      return canChi;
+    }
+  </script>
+</body>
+<h2>Lương Đức Quý 6351071061</h2>
+
+</html>

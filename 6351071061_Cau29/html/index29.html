@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>JS DOM paragraph style</title>
+</head>
+<body>
+<form id="myForm">
+  <p id ='text'>JavaScript Exercises - w3resource</p>
+  <div>
+    <button id="jsstyle"
+    onclick="js_style()">Style</button>
+  </div>
+</form>
+<script>
+    const form = document.getElementById('myForm');
+    form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const text = document.getElementById('text');
+    text.style.fontSize = '20px';
+    text.style.fontFamily = 'Arial';
+    text.style.color = 'blue';
+    text.style.fontWeight = '600';
+  });
+</script>
+<h2>Lương Đức Quý 6351071061</h2>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Return first and last name from a form</title>
+</head>
+<body>
+  <form id="form1" onsubmit="getFormValues()">
+    First name: <input type="text" name="fname" value="David"><br>
+    Last name: <input type="text" name="lname" value="Beckham"><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    function getFormValues() {
+      // Lấy tham chiếu đến form
+      const form = document.getElementById("form1");
+
+      // Lấy giá trị từ ô input với name là "fname"
+      const firstName = form.elements["fname"].value;
+
+      // Lấy giá trị từ ô input với name là "lname"
+      const lastName = form.elements["lname"].value;
+
+      // Hiển thị giá trị lấy được
+      alert("Họ và tên: " + firstName + " " + lastName);
+
+      // Ngăn chặn form từ việc gửi đi (để bạn có thể xem thông báo)
+      return false;
+    }
+  </script>
+      	<h2>Lương Đức Quý 6351071061</h2>
+
+</body>
+</html>

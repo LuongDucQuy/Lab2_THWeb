@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        // Mảng chứa tên của các ngày trong tuần
+        var daysOfWeek = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+
+        // Tạo một đối tượng Date với ngày cụ thể ("December 31, 2023")
+        var date = new Date("December 31, 2023");   
+
+        // Sử dụng getDay() để lấy chỉ số của ngày trong mảng daysOfWeek
+        var dayOfWeek = daysOfWeek[date.getDay()];
+
+        // Đặt nội dung của phần tử HTML có id "demo" để hiển thị ngày
+        document.getElementById("demo").innerHTML = "Thứ " + dayOfWeek;
+    </script>
+        <h1>Lương Đức Quý 6351071061</h1>
+
+</body>
+</html>

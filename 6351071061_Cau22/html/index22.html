@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Đồng hồ đếm ngược</title>
+</head>
+<body>
+	<h1>Đồng hồ đếm ngược đến ngày 31 tháng 12 năm 2023 lúc 23:59:59</h1>
+	<p id="demo"></p>
+
+	<script>
+		// Thiết lập thời gian đích mà ta sẽ đếm
+		var countDownDate = new Date("Dec 30, 2023 23:59:59").getTime();
+
+		// Cập nhập thời gian sau mỗi 1 giây
+		var x = setInterval(function() {
+
+		  // Lấy thời gian hiện tại
+		  var now = new Date().getTime();
+		    
+		  // Lấy số thời gian chênh lệch
+		  var distance = countDownDate - now;
+		    
+		  // Tính toán số ngày, giờ, phút, giây từ thời gian chênh lệch
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		    
+		  // Hiển thị chuỗi thời gian trong thẻ p
+		  document.getElementById("demo").innerHTML = days + " ngày " + hours + " giờ "
+		  + minutes + " phút " + seconds + " giây ";
+		    
+		  // Nếu thời gian kết thúc, hiển thị chuỗi thông báo
+		  if (distance < 0) {
+		    clearInterval(x);
+		    document.getElementById("demo").innerHTML = "Đã hết thời gian đếm ngược!";
+		  }
+		}, 1000);
+	</script>
+
+	<h2>Lương Đức Quý 6351071061</h2>
+</body>
+</html>

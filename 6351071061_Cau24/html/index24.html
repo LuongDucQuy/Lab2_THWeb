@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Styles/index24.css">
+</head>
+<body>
+    <div align="center" class="background">
+        <div class="all-content">
+            <table>
+                <tr>
+                    <td>Lương</td>
+                    <td><input type="number" id="luong" class="temp"></td>
+                </tr>
+
+                <tr>
+                    <td>Hệ số lương</td>
+                    <td><input type="number" name="" id="hs-luong" class="temp"></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" align="center"><input onclick="tinhluong()" type="button" value="Tính lương tháng" class="tinh"></td>
+                </tr>
+                
+                <tr>
+                    <td>Lương tháng</td>
+                    <td id="result" class="temp"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function tinhluong(){
+            var luong = document.getElementById('luong').value;
+            var hsluong = document.getElementById('hs-luong').value;
+            var luongthang=luong*hsluong;
+            document.getElementById('result').innerHTML = luongthang;
+        }
+    </script>
+    	<h2>Lương Đức Quý 6351071061</h2>
+
+</body>
+</html>

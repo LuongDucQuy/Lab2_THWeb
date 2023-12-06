@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Display a random image.</title>
+<style type="text/css">
+    body { margin-top: 30px; }
+</style>
+</head>
+<body>
+    <div>
+        <button id="jsstyle" onclick="display_random_image();">Show Image</button>
+    </div>
+
+    <img id="randomImage" width="500" height="343" alt="Random Image">
+
+    <script>
+        function display_random_image() {
+            var imageArray = [
+                { src: "http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg", width: "240", height: "160" },
+                { src: "http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg", width: "320", height: "195" },
+                { src: "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg", width: "500", height: "343" }
+            ];
+
+            // Chọn một hình ảnh ngẫu nhiên từ mảng
+            var randomImage = imageArray[Math.floor(Math.random() * imageArray.length)];
+
+            // Lấy phần tử hình ảnh theo ID
+            var imageElement = document.getElementById('randomImage');
+
+            // Cập nhật thuộc tính src và kích thước của hình ảnh
+            imageElement.src = randomImage.src;
+            imageElement.width = randomImage.width;
+            imageElement.height = randomImage.height;
+        }
+    </script>
+          	<h2>Lương Đức Quý 6351071061</h2>
+
+</body>
+</html>
